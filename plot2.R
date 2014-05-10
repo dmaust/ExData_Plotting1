@@ -5,7 +5,7 @@ power_consumption <- read.table('household_power_consumption.txt', sep=';', stri
 date_range <- as.Date(c('2007-02-01', '2007-02-02'))
 power_consumption <- power_consumption[as.Date(dmy(power_consumption$Date)) %in% date_range,]
 
-svg('plot2.png')
+png('plot2.png')
 
 global_active_power = as.numeric(power_consumption$Global_active_power)
 plot(

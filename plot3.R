@@ -5,7 +5,7 @@ power_consumption <- read.table('household_power_consumption.txt', sep=';', stri
 date_range <- as.Date(c('2007-02-01', '2007-02-02'))
 power_consumption <- power_consumption[as.Date(dmy(power_consumption$Date)) %in% date_range,]
 
-svg('plot3.png')
+png('plot3.png')
 
 
 x = as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time))
