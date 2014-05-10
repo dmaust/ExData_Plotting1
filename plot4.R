@@ -46,7 +46,7 @@ plot(
   as.numeric(power_consumption$Global_reactive_power), 
   type='n',
   xlab='datetime',
-  ylab='Voltage'
+  ylab='Global_reactive_power'
 )
 lines(x, as.numeric(power_consumption$Global_reactive_power))
 dev.off()
