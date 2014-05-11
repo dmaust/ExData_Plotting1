@@ -14,29 +14,26 @@ x = as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time))
 plot(
   x, 
   as.numeric(power_consumption$Global_active_power), 
-  type='n',
+  type='l',
   xlab='',
   ylab='Global Active Power'
 )
-lines(x, as.numeric(power_consumption$Global_active_power))
 
 plot(
   x, 
   as.numeric(power_consumption$Voltage), 
-  type='n',
+  type='l',
   xlab='datetime',
   ylab='Voltage'
 )
-lines(x, as.numeric(power_consumption$Voltage))
 
 plot(
   x, 
   as.numeric(power_consumption$Sub_metering_1), 
-  type='n',
+  type='l',
   xlab='',
   ylab='Energy sub metering'
   )
-lines(as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time)), as.numeric(power_consumption$Sub_metering_1), col='black')
 lines(as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time)), as.numeric(power_consumption$Sub_metering_2), col='red')
 lines(as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time)), as.numeric(power_consumption$Sub_metering_3), col='blue')
 legend('topright', legend=c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), col=c('black','red','blue'), lty=1, bty='n')
@@ -44,9 +41,8 @@ legend('topright', legend=c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'
 plot(
   x, 
   as.numeric(power_consumption$Global_reactive_power), 
-  type='n',
+  type='l',
   xlab='datetime',
   ylab='Global_reactive_power'
 )
-lines(x, as.numeric(power_consumption$Global_reactive_power))
 dev.off()

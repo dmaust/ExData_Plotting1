@@ -12,11 +12,10 @@ x = as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time))
 plot(
   x, 
   as.numeric(power_consumption$Sub_metering_1), 
-  type='n',
+  type='l',
   xlab='',
   ylab='Energy sub metering'
   )
-lines(as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time)), as.numeric(power_consumption$Sub_metering_1), col='black')
 lines(as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time)), as.numeric(power_consumption$Sub_metering_2), col='red')
 lines(as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time)), as.numeric(power_consumption$Sub_metering_3), col='blue')
 legend('topright', legend=c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), col=c('black','red','blue'), lty=1)

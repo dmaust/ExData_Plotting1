@@ -11,9 +11,8 @@ global_active_power = as.numeric(power_consumption$Global_active_power)
 plot(
   as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time)), 
   as.numeric(power_consumption$Global_active_power), 
-  type='n',
+  type='l',
   xlab='',
   ylab='Global Active Power (kilowatts)'
   )
-lines(as.POSIXlt(paste(dmy(power_consumption$Date), power_consumption$Time)), as.numeric(power_consumption$Global_active_power))
 dev.off()
